@@ -39,7 +39,7 @@ class LoginView extends StatelessWidget {
                       if (user != null) {
                         Get.toNamed('/home');
                       } else {
-                        Get.snackbar('Error', 'Facebook Sign-in failed');
+                        Get.snackbar('Error', 'Sign-in failed');
                       }
                     },
                   ),

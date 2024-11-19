@@ -41,7 +41,7 @@ dependencies:
   cloud_firestore: ^5.5.0  # For Firestore database
   firebase_messaging: ^15.1.5  # Optional: For Push notifications
   google_sign_in: ^6.0.1
-  flutter_facebook_auth: ^6.1.2
+  flutter_facebook_auth: ^7.0.0
   flutter_signin_button: ^2.0.0
 
 dev_dependencies:

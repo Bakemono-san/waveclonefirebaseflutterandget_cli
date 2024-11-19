@@ -46,7 +46,7 @@ class AuthControllerController extends GetxController {
 
       // Sign in to Firebase with the Google credentials
       final UserCredential userCredential = await auth.signInWithCredential(credential);
-      print("signed in successfully");
+      print("signed in successfully : ${userCredential.user?.displayName}  ${userCredential.user?.email}  ${userCredential.user?.photoURL}  ${userCredential.user?.uid}  ${userCredential.user!.phoneNumber} ");
       return userCredential.user;
     } catch (e) {
       print(e); // Handle any error during sign-in
@@ -57,12 +57,11 @@ class AuthControllerController extends GetxController {
   // Facebook Sign-In Method
   Future<User?> signInWithFacebook() async {
     try {
-      final LoginResult result = await FacebookAuth.instance.login();
-
+      final LoginResult result = await FacebookAuth.instance.login(permissions: ['email', 'public_profile']);
       if (result.status == LoginStatus.success) {
-        // Updated to use `value` instead of `token`
-        final OAuthCredential credential = FacebookAuthProvider.credential(result.accessToken!.token);
+        final OAuthCredential credential = FacebookAuthProvider.credential(result.accessToken!.tokenString);
         final UserCredential userCredential = await _auth.signInWithCredential(credential);
+        print("connected user : ${userCredential.user?.displayName}  ${userCredential.user?.email}  ${userCredential.user?.photoURL}  ${userCredential.user?.uid}  ${userCredential.user?.phoneNumber} ");
         return userCredential.user;
       } else {
         print('Facebook sign-in failed: ${result.message}');

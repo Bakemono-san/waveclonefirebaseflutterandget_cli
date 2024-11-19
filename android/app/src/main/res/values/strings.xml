@@ -1,0 +1,6 @@
+<resources>
+  <string name="facebook_app_id">894416609467609</string>
+  <string name="facebook_client_token">013630523c0ccc828b2f38a4d57c4572</string>
+  <string name="app_name">WaveCloneFirebase</string>
+    <string name="fb_login_protocol_scheme">894416609467609</string>
+</resources>
