@@ -1,0 +1,28 @@
+[
+  {
+    "id": "6",
+    "plafond": 100000,
+    "solde": 0,
+    "type": 0,
+    "created_at": "",
+    "deleted": false,
+    "deleted_at": "",
+    "updated_at": "",
+    "user_id": "22",
+    "somme_depot": 0,
+    "plafonnee": false
+  },
+  {
+    "id": "7",
+    "plafond": 100000,
+    "solde": 0,
+    "type": 0,
+    "created_at": "",
+    "deleted": false,
+    "deleted_at": "",
+    "updated_at": "",
+    "user_id": "23",
+    "somme_depot": 0,
+    "plafonnee": false
+  }
+]

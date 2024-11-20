@@ -1,0 +1,40 @@
+[
+  {
+    "id": "22",
+    "created_at": "2024-01-01T12:00:00Z",
+    "deleted": false,
+    "deleted_at": "2024-01-01T12:00:00Z",
+    "updated_at": "2024-01-01T12:00:00Z",
+    "telephone": "+221785953562",
+    "adresse": "ouakam",
+    "email": "ochatobake@gmail.com",
+    "enabled": true,
+    "id_card_number": "1761200200327",
+    "nom": "diagne",
+    "password": "$2a$10$Vbl8dTYTczWrz3hvGIBtCO0DldVbCWa9/r3NjgEDCymjG73nZg2gS",
+    "prenom": "moustapha",
+    "qr_code": "http://res.cloudinary.com/dorovcxxj/image/upload/v1731866382/user_qr_codes/iocaagzwcwmzrgwpcetn.png",
+    "status": "ACTIF",
+    "role_id": "1",
+    "account_id": "2024-01-01T12:00:00Z"
+  },
+  {
+    "id": "23",
+    "created_at": "2024-01-01T12:00:00Z",
+    "deleted": false,
+    "deleted_at": "2024-01-01T12:00:00Z",
+    "updated_at": "2024-01-01T12:00:00Z",
+    "telephone": "+221772980105",
+    "adresse": "string",
+    "email": "mouhamadoumoustapha.diagne@unchk.edu.sn",
+    "enabled": true,
+    "id_card_number": "1234567890",
+    "nom": "Diop",
+    "password": "$2a$10$98.LjYZgS7HXN/4ZBF82N.SPK9H6QmoG4s8E1bHI5XB27/4bp5ov6",
+    "prenom": "Abdou aziz",
+    "qr_code": "http://res.cloudinary.com/dorovcxxj/image/upload/v1731924380/user_qr_codes/gynznhp8fnotyvutzhrk.png",
+    "status": "ACTIF",
+    "role_id": "1",
+    "account_id": "2024-01-01T12:00:00Z"
+  }
+]

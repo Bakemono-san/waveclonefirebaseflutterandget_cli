@@ -72,6 +72,7 @@
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" />
             <data android:scheme="@string/fb_login_protocol_scheme" />
+            <data android:scheme="fb" android:host="https://wavecloneapp.firebaseapp.com/__/auth/handler" />
         </intent-filter>
     </activity>
 
@@ -79,6 +80,8 @@
 
     <queries>
     <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
+    <package android:name="com.facebook.orca" />
+    <package android:name="com.facebook.lite" />
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT" />
             <data android:mimeType="text/plain" />
