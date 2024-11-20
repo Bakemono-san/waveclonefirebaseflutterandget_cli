@@ -1,8 +1,8 @@
 class UserModel {
-  final String id;
-  final String createdAt;
-  final String updatedAt;
-  final String deletedAt;
+  final String? id;
+  final String? createdAt;
+  final String? updatedAt;
+  final String? deletedAt;
   final bool deleted;
   final String telephone;
   final String adresse;
@@ -18,15 +18,15 @@ class UserModel {
   final String accountId;
 
   UserModel({
-    required this.id,
-    required this.createdAt,
-    required this.updatedAt,
-    required this.deletedAt,
+    this.id,
+    this.createdAt,
+    this.updatedAt,
+    this.deletedAt,
     required this.deleted,
     required this.telephone,
     required this.adresse,
     required this.email,
-    required this.enabled,
+    this.enabled = true,
     required this.idCardNumber,
     required this.nom,
     required this.password,

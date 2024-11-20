@@ -1,5 +1,5 @@
 class AccountModel {
-  final int? id;
+  final String? id;
   final double plafond;
   final double solde;
   final String type;

@@ -22,6 +22,10 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Login"),
+        backgroundColor: const Color.fromARGB(255, 33, 107, 243),
+      ),
       backgroundColor: Colors.white,
       body: Center(
         child: SingleChildScrollView(
@@ -35,7 +39,10 @@ class _LoginViewState extends State<LoginView> {
               children: [
                 Hero(
                   tag: 'brand_logo',
-                  child: FlutterLogo(size: 100),
+                  child: Container(
+                    height: 150,
+                    child: Image.asset("assets/logo.png"),
+                  ),
                 ),
                 SizedBox(height: 42),
 
@@ -96,20 +103,26 @@ class _LoginViewState extends State<LoginView> {
 
                 // Login Button
                 Obx(() => ElevatedButton(
-                      onPressed: isLoading.value ? null : () {
-                        authController.signInWithEmailPassword(
-                            email: _emailController.text,
-                            password: _passwordController.text);
-                      },
+                      onPressed: isLoading.value
+                          ? null
+                          : () {
+                              authController.signInWithEmailPassword(
+                                  email: _emailController.text,
+                                  password: _passwordController.text);
+                            },
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(double.infinity, 50),
+                        backgroundColor:
+                            const Color.fromARGB(255, 33, 107, 243),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
                       child: isLoading.value
                           ? CircularProgressIndicator(color: Colors.white)
-                          : Text('Login', style: TextStyle(fontSize: 16)),
+                          : Text('Login',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.white)),
                     )),
 
                 SizedBox(height: 24),

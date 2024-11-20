@@ -1,5 +1,9 @@
 import 'package:get/get.dart';
 
+import '../modules/acceuil/bindings/acceuil_binding.dart';
+import '../modules/acceuil/views/acceuil_view.dart';
+import '../modules/distributeur/bindings/distributeur_binding.dart';
+import '../modules/distributeur/views/distributeur_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -29,6 +33,16 @@ class AppPages {
       name: _Paths.REGISTER,
       page: () => const RegisterView(),
       binding: RegisterBinding(),
+    ),
+    GetPage(
+      name: _Paths.ACCEUIL,
+      page: () => AcceuilView(),
+      binding: AcceuilBinding(),
+    ),
+    GetPage(
+      name: _Paths.DISTRIBUTEUR,
+      page: () => DistributeurView(),
+      binding: DistributeurBinding(),
     ),
   ];
 }

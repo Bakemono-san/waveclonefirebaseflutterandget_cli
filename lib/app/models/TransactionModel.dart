@@ -1,28 +1,24 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class TransactionModel {
-  final int id;
-  final int agentId;
-  final bool annulee;
-  final String date;
-  final double montant;
-  final int receiverId;
-  final int senderId;
-  final String type;
-  final String? createdAt;
-  final bool deleted;
-  final String? deletedAt;
-  final String? updatedAt;
-  final String? agentTelephone;
-  final String receiverTelephone;
-  final String senderTelephone;
+  String? id;
+  String? agentTelephone;
+  bool annulee;
+  String date;
+  double montant;
+  String? receiverTelephone;
+  String? senderTelephone;
+  String type;
+  String? createdAt;
+  bool deleted;
+  String? deletedAt;
+  String? updatedAt;
 
   TransactionModel({
-    required this.id,
-    required this.agentId,
+    this.id,
     required this.annulee,
     required this.date,
     required this.montant,
-    required this.receiverId,
-    required this.senderId,
     required this.type,
     this.createdAt,
     required this.deleted,
@@ -30,23 +26,47 @@ class TransactionModel {
     this.updatedAt,
     this.agentTelephone,
     required this.receiverTelephone,
-    required this.senderTelephone,
+    this.senderTelephone,
   });
 
   factory TransactionModel.fromJson(Map<String, dynamic> json) {
+    // Handling Timestamp fields
+    var date = json['date'];
+    var createdAt = json['created_at'];
+    var updatedAt = json['updated_at'];
+
+    // Check if date, createdAt, and updatedAt are Timestamps or Strings
+    if (date is Timestamp) {
+      date = date.toDate().toIso8601String();
+    } else if (date is String) {
+      // If it's already a string, keep it as is
+      date = date;
+    }
+
+    if (createdAt is Timestamp) {
+      createdAt = createdAt.toDate().toIso8601String();
+    } else if (createdAt is String) {
+      createdAt = createdAt;
+    }
+
+    if (updatedAt is Timestamp) {
+      updatedAt = updatedAt.toDate().toIso8601String();
+    } else if (updatedAt is String) {
+      updatedAt = updatedAt;
+    }
+
     return TransactionModel(
       id: json['id'],
-      agentId: json['agent_id'],
       annulee: json['annulee'],
-      date: json['date'],
-      montant: json['montant'],
-      receiverId: json['receiver_id'],
-      senderId: json['sender_id'],
+      date: date ?? '', // Handle if date is null
+      montant: (json['montant'] is double)
+          ? json['montant']
+          : (json['montant'] as int).toDouble(),
       type: json['type'],
-      createdAt: json['created_at'],
+      createdAt: createdAt,
       deleted: json['deleted'],
       deletedAt: json['deleted_at'],
-      updatedAt: json['updated_at'],
+      updatedAt: updatedAt,
       agentTelephone: json['agent_telephone'],
       receiverTelephone: json['receiver_telephone'],
       senderTelephone: json['sender_telephone'],
@@ -56,12 +76,9 @@ class TransactionModel {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'agent_id': agentId,
       'annulee': annulee,
       'date': date,
       'montant': montant,
-      'receiver_id': receiverId,
-      'sender_id': senderId,
       'type': type,
       'created_at': createdAt,
       'deleted': deleted,
